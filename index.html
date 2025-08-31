@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Zero Harm Initiative - Animal Rights Revolution</title>
+    <link rel="icon" type="image/jpeg" href="logo.jpeg">
     <style>
         * {
             margin: 0;
@@ -144,7 +145,7 @@
             background: var(--dark-orange);
             border-radius: 50%;
             transform: translate(-50%, -50%);
-            transition: width 0.3s ease, height 0.3s ease;
+            transition: all 0.3s ease;
         }
         
         .action-btn:hover {
@@ -153,8 +154,8 @@
         }
         
         .action-btn:hover::before {
-            width: 300px;
-            height: 300px;
+            width: 120%;
+            height: 120%;
         }
         
         .action-btn span {
@@ -1246,7 +1247,85 @@
             font-size: 0.9rem;
         }
 
+    
+        /* Prominent Logo Section */
+        .hero-logo-section {
+            padding: 80px 0;
+            text-align: center;
+            background: linear-gradient(135deg, #f5f5f5 0%, #e8e8e8 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero-logo-section::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(76, 175, 80, 0.05) 0%, transparent 70%);
+            animation: pulse 4s ease-in-out infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); opacity: 0.3; }
+            50% { transform: scale(1.1); opacity: 0.5; }
+        }
+        
+        .hero-logo-wrapper {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .hero-logo {
+            width: 250px;
+            height: 250px;
+            object-fit: contain;
+            margin-bottom: 30px;
+            border-radius: 50%;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            background: white;
+            padding: 20px;
+            animation: float 3s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+        
+        .hero-tagline {
+            font-size: 2.5rem;
+            color: #333;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+        
+        .hero-subtitle {
+            font-size: 1.2rem;
+            color: #666;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        @media (max-width: 768px) {
+            .hero-logo {
+                width: 180px;
+                height: 180px;
+            }
+            
+            .hero-tagline {
+                font-size: 1.8rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1rem;
+            }
+        }
+
     </style>
+    <link rel="stylesheet" href="dynamic-content-styles.css">
 </head>
 <body>
     <!-- Custom Cursor -->
@@ -1276,6 +1355,17 @@
             </div>
         </div>
     </nav>
+
+    <!-- Prominent Logo Section -->
+    <section class="hero-logo-section">
+        <div class="container">
+            <div class="hero-logo-wrapper">
+                <img src="logo.jpeg" alt="Zero Harm Initiative" class="hero-logo">
+                <h1 class="hero-tagline">Creating a World Without Harm</h1>
+                <p class="hero-subtitle">Leading the Movement for Animal Liberation</p>
+            </div>
+        </div>
+    </section>
 
     <!-- Hero Section -->
     <section class="hero" id="home">
@@ -1529,6 +1619,42 @@
         </div>
     </section>
 
+    <!-- Dynamic News Section -->
+    <section class="dynamic-section">
+        <div class="container">
+            <h2>Latest Animal Rights News</h2>
+            <p class="section-subtitle">Stay informed about the latest developments in animal welfare</p>
+            <div id="dynamic-news"></div>
+        </div>
+    </section>
+
+    <!-- Dynamic Petitions Section -->
+    <section class="dynamic-section" style="background: white;">
+        <div class="container">
+            <h2>Active Petitions</h2>
+            <p class="section-subtitle">Add your voice to these important causes</p>
+            <div id="dynamic-petitions"></div>
+        </div>
+    </section>
+
+    <!-- Dynamic Local Shelters Section -->
+    <section class="dynamic-section">
+        <div class="container">
+            <h2>Find Local Animal Shelters</h2>
+            <p class="section-subtitle">Connect with shelters and rescues in your area</p>
+            <div id="dynamic-shelters"></div>
+        </div>
+    </section>
+
+    <!-- Dynamic Campaigns Section -->
+    <section class="dynamic-section" style="background: white;">
+        <div class="container">
+            <h2>Join Active Campaigns</h2>
+            <p class="section-subtitle">Be part of the movement for change</p>
+            <div id="dynamic-campaigns"></div>
+        </div>
+    </section>
+
     <!-- Donate Section -->
     <section class="donate-section" id="donate">
         <div class="donate-container">
@@ -1758,5 +1884,6 @@
             mobileToggle.classList.toggle('active');
         });
     </script>
+    <script src="dynamic-content.js"></script>
 </body>
 </html>

@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Our Impact - Zero Harm Initiative</title>
+    <link rel="icon" type="image/jpeg" href="logo.jpeg">
     <style>
         * {
             margin: 0;
@@ -518,6 +519,37 @@
         @media (max-width: 768px) {
             .logo-img { height: 35px; }
             .logo-text { font-size: 1.2rem; }
+        }
+    
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        
+        .social-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: rgba(76, 175, 80, 0.1);
+            border-radius: 50%;
+            transition: all 0.3s ease;
+        }
+        
+        .social-link:hover {
+            background: #4CAF50;
+            transform: translateY(-3px);
+        }
+        
+        .social-link svg {
+            fill: #4CAF50;
+            transition: fill 0.3s ease;
+        }
+        
+        .social-link:hover svg {
+            fill: white;
         }
     </style>
 </head>

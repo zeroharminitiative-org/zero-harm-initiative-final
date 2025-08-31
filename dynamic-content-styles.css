@@ -1,0 +1,481 @@
+/* Dynamic Content Styles for Zero Harm Initiative */
+
+/* Loading States */
+.loading {
+    text-align: center;
+    padding: 2rem;
+    color: #666;
+    font-style: italic;
+}
+
+.loading::after {
+    content: '';
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin-left: 10px;
+    border: 3px solid #f3f3f3;
+    border-top: 3px solid #4CAF50;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Error States */
+.error-message {
+    text-align: center;
+    padding: 2rem;
+    background: #ffebee;
+    border-radius: 8px;
+    color: #c62828;
+}
+
+.error-message button {
+    margin-top: 1rem;
+    padding: 0.5rem 1.5rem;
+    background: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.error-message button:hover {
+    background: #45a049;
+}
+
+/* News Section */
+.news-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1rem;
+}
+
+.news-item {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.news-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+}
+
+.news-item h3 {
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+    line-height: 1.4;
+}
+
+.news-item h3 a {
+    color: #1D594E;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.news-item h3 a:hover {
+    color: #F28705;
+}
+
+.news-item time {
+    display: block;
+    color: #666;
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+}
+
+.news-item p {
+    color: #333;
+    line-height: 1.6;
+    font-size: 0.95rem;
+}
+
+/* Petitions Section */
+.petitions-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1rem;
+}
+
+.petition-card {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.petition-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+}
+
+.petition-card h3 {
+    color: #1D594E;
+    margin-bottom: 0.5rem;
+    font-size: 1.2rem;
+}
+
+.petition-card p {
+    color: #666;
+    margin-bottom: 1rem;
+    font-size: 0.95rem;
+}
+
+.petition-progress {
+    margin: 1rem 0;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 20px;
+    background: #e0e0e0;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 0.5rem;
+}
+
+.progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #4CAF50, #45a049);
+    transition: width 0.5s ease;
+    position: relative;
+}
+
+.progress-fill::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: linear-gradient(
+        45deg,
+        rgba(255,255,255,0.2) 25%,
+        transparent 25%,
+        transparent 50%,
+        rgba(255,255,255,0.2) 50%,
+        rgba(255,255,255,0.2) 75%,
+        transparent 75%,
+        transparent
+    );
+    background-size: 20px 20px;
+    animation: move-stripes 1s linear infinite;
+}
+
+@keyframes move-stripes {
+    0% { background-position: 0 0; }
+    100% { background-position: 20px 0; }
+}
+
+.petition-progress span {
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.petition-link {
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 0.6rem 1.5rem;
+    background: #F23030;
+    color: white;
+    text-decoration: none;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+    font-weight: 600;
+}
+
+.petition-link:hover {
+    background: #d92626;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(242, 48, 48, 0.3);
+}
+
+/* Local Shelters Section */
+.location-search {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    max-width: 400px;
+}
+
+#zipcode-input {
+    flex: 1;
+    padding: 0.8rem 1.2rem;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+#zipcode-input:focus {
+    outline: none;
+    border-color: #4CAF50;
+}
+
+.location-search button {
+    padding: 0.8rem 2rem;
+    background: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.location-search button:hover {
+    background: #45a049;
+}
+
+.shelters-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+}
+
+.shelter-card {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.shelter-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+}
+
+.shelter-card h3 {
+    color: #1D594E;
+    margin-bottom: 0.5rem;
+}
+
+.shelter-distance {
+    color: #F28705;
+    font-weight: 600;
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+}
+
+.shelter-card address {
+    font-style: normal;
+    color: #666;
+    margin-bottom: 0.5rem;
+    font-size: 0.95rem;
+}
+
+.shelter-card p {
+    color: #666;
+    margin-bottom: 0.5rem;
+    font-size: 0.95rem;
+}
+
+.shelter-link {
+    display: inline-block;
+    margin-top: 0.5rem;
+    color: #4CAF50;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.shelter-link:hover {
+    color: #45a049;
+    text-decoration: underline;
+}
+
+/* Events Section */
+.events-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1rem;
+}
+
+.event-card {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.event-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+}
+
+.event-type {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 0.3rem 1rem;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: white;
+    border-bottom-left-radius: 8px;
+}
+
+.event-type.festival {
+    background: #F29F05;
+}
+
+.event-type.protest {
+    background: #F23030;
+}
+
+.event-type.volunteer {
+    background: #4CAF50;
+}
+
+.event-card h3 {
+    color: #1D594E;
+    margin: 1.5rem 0 0.5rem 0;
+    font-size: 1.1rem;
+}
+
+.event-card time {
+    display: block;
+    color: #F28705;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.event-location {
+    color: #666;
+    margin-bottom: 1rem;
+    font-size: 0.95rem;
+}
+
+.event-link {
+    color: #1D594E;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.event-link:hover {
+    color: #F28705;
+    text-decoration: underline;
+}
+
+/* Campaigns Section */
+.campaigns-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1rem;
+}
+
+.campaign-card {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.campaign-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+}
+
+.campaign-card h3 {
+    color: #1D594E;
+    margin-bottom: 0.3rem;
+    font-size: 1.2rem;
+}
+
+.campaign-org {
+    color: #666;
+    font-size: 0.9rem;
+    margin-bottom: 0.8rem;
+    font-style: italic;
+}
+
+.campaign-card p {
+    color: #333;
+    margin-bottom: 1rem;
+    line-height: 1.5;
+}
+
+.campaign-progress {
+    margin: 1rem 0 1.5rem 0;
+}
+
+.campaign-action {
+    width: 100%;
+    padding: 0.8rem;
+    background: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.campaign-action:hover {
+    background: #45a049;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(76, 175, 80, 0.3);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .news-grid,
+    .petitions-grid,
+    .shelters-grid,
+    .events-grid,
+    .campaigns-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .location-search {
+        flex-direction: column;
+    }
+    
+    .location-search button {
+        width: 100%;
+    }
+}
+
+/* Section Headers */
+.dynamic-section {
+    margin: 3rem 0;
+    padding: 2rem;
+    background: #f8f8f8;
+    border-radius: 12px;
+}
+
+.dynamic-section h2 {
+    color: #1D594E;
+    margin-bottom: 1rem;
+    font-size: 2rem;
+    text-align: center;
+}
+
+.dynamic-section .section-subtitle {
+    text-align: center;
+    color: #666;
+    margin-bottom: 2rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
